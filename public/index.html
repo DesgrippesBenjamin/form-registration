@@ -3,8 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Form Registration</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- Code Here -->
+    <section class="section2">
+      <div class="contenaire">
+        <h1>Registration Form</h1>
+        <form action="/register" method="POST">
+          <label for="myid"></label>
+          <input class="inp" type="text" id="myid" name="name" placeholder="First name" required><br>
+          <label for="mymail"></label>
+          <input class="inp" type="email" id="mymail" name="email" placeholder="Email" required><br>
+          <label for="myphone"></label>
+          <input class="inp" type="tel" id="myphone" name="phone" pattern="[0-9]{2}[0-9]{2}[0-9]{2}" placeholder="votre num tel" minlength="6" maxlength="6" required><br>
+          <label for="mypassword"></label>
+          <input class="inp" type="password" id="mypassword" name="password" placeholder="Minimum 12 caractéres" minlength="12" required><br>
+          <label for="confirmmypassword"></label>
+          <input class="inp" type="password" id="confirmmypassword" name="password" placeholder="Confirmer votre mdp" minlength="12" required><br>
+          <!--checkbox-->
+          <p> <input type="checkbox"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui repellat aut eum, ea accusantium possimus repudiandae nesciunt</p>
+          <p> <input type="checkbox"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui repellat aut eum, ea accusantium possimus repudiandae nesciunt</p>
+          <input type="submit" value="Register">
+        </form>
+      </div>      
+    </section>
+ 
+    <script>
+       
+      var a = document.getElementById("mypassword");
+      var b = document.getElementById("confirmmypassword");
+
+      function validatePassword() {
+        if (a.value != b.value) {
+          confirmmypassword.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirmmypassword.setCustomValidity('');
+        }
+    }
+      mypassword.onchange = validatePassword;
+      confirmmypassword.onkeyup = validatePassword;
+    </script>
   </body>
 </html>
